@@ -1,0 +1,27 @@
+type User {
+  id: ID! @unique
+  name: String! @unique
+  friends: [User!]! @relation(name: "Friends")
+  messages: [Message!]! @relation(name: "AuthoredMessages")
+  likedMessage: [Message!]! @relation(name: "LikedMessages")
+  hobby: Hobby
+}
+
+type Hobby {
+  name: String!
+  hardcore: Boolean @default(value: "false")
+}
+
+type Message {
+  id: ID! @unique
+  content: String!
+  author: User! @relation(name: "AuthoredMessages")
+  likedBy: [User!]! @relation(name: "LikedPosts")
+  categories: [Category!]
+}
+
+enum Category {
+  WEIRD
+  HEDONISTIC
+  PHILANTROPIC
+}
