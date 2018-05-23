@@ -1,0 +1,8 @@
+query {
+  users(where: {
+    name_contains: "o"
+  })
+  {
+    name
+  }
+}

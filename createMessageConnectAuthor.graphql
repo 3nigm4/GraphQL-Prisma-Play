@@ -1,0 +1,13 @@
+mutation {
+  createMessage(data: {
+    content: "Peace!"
+    categories: {
+      set: PHILANTROPIC
+    }
+    author: {
+      connect: {name: "Bruno"}
+    }
+  }) {
+    id
+  }
+}

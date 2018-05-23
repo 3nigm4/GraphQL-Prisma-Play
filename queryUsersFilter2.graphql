@@ -1,0 +1,6 @@
+query {
+  users(where: { name_contains: "a", OR: { name_contains: "s" } }) {
+    id
+    name
+  }
+}

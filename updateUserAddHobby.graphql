@@ -1,0 +1,21 @@
+mutation {
+  updateUser(
+    data: {
+      hobby: {
+        create: {
+          name: "Plank",
+          hardcore: true
+        }
+      }
+    },
+    where: {
+      name: "Bruno"
+    }) {
+    id
+    name
+    hobby {
+      name
+      hardcore
+    }
+  }
+}
